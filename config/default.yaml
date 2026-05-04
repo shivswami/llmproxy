@@ -1,0 +1,5 @@
+base_url: "http://localhost:1234/v1"
+model_name: "olmocr2"
+workspace_root: "./runs"
+output_root: "./output"
+timeout_seconds: 7200
