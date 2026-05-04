@@ -12,29 +12,37 @@
 
 ## Setup (macOS primary, also works on Linux/Windows)
 
-### 1) Create conda environment
+### 1) Clone the repository
 ```bash
-conda create -n pdfmd python=3.11 -y
-conda activate pdfmd
+git clone <your-repo-url>
+cd pdf-md-olmocr
 ```
 
-### 2) Install uv and dependencies
+### 2) Create a virtual environment with uv
 ```bash
-pip install uv
+uv venv
+# macOS/Linux
+source .venv/bin/activate
+# Windows (PowerShell)
+# .venv\Scripts\Activate.ps1
+```
+
+### 3) Install dependencies with uv
+```bash
 uv sync
 ```
 
-### 3) Install olmocr
+### 4) Install olmocr
 ```bash
 pip install olmocr
 ```
 
-### 4) Start LM Studio server
+### 5) Start LM Studio server
 In LM Studio:
 1. Load a model (example: `allenai/olmocr-2-7b`)
 2. Start local server at `http://localhost:1234/v1`
 
-### 5) Run preflight
+### 6) Run preflight
 ```bash
 uv run pdfmd check
 ```
